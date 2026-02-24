@@ -542,7 +542,7 @@ function detectarBypassShell() {
     }
 
     $appsSuspeitos = [
-        'moe.shizuku.privileged.api' => 'Shizuku (API)',
+        'moe.shizuku.privilegedi.api' => 'Shizuku (API)',
         'shizuku.service' => 'Shizuku (Service)',
         'com.lexa.fakegps' => 'Fake GPS',
         'com.incorporateapps.fakegps.fre' => 'Fake GPS Free',
