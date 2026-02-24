@@ -616,11 +616,10 @@ function detectarBypassShell() {
             'magisk' => 'Magisk Root (Arquivo Residual)',
             'busybox' => 'BusyBox (Ferramenta de Sistema)',
             'su' => 'Binário SU (Root)',
-            'brevent' => 'Brevent Script (Script de Otimização/Cheat)',
+            'brevent' => 'Brevent Último Acesso A 4 Mêses)',
             'termux' => 'Script Termux (Possível Script)',
             'holograma' => 'Holograma (Visual Skin/Cheat)',
-            '.sh' => 'Script Shell (Possível Brevent/Otimizador)',
-            '2' => 'Script Temporário Genérico (Ativação Keymapper)'
+            '.sh' => 'Detectado (erro)',      
         ];
 
         $count = 0;
