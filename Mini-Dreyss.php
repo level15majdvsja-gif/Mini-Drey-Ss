@@ -1174,7 +1174,7 @@ function escanearFreeFire($pacote, $nomeJogo) {
     echo $bold . $azul . "  → Checando bypass de Wallhack/Holograma...\n";
 
     $pastasParaVerificar = [
-        "/sdcard/Android/data/" . $pacote . "/files/contentcache/Optional/android/gameassetbundles",
+        "/sdcard/Android/data/" . $pacote . "/files/contentcache/Optional/android/gameasetbundles",
         "/sdcard/Android/data/" . $pacote . "/files/contentcache/Optional/android",
         "/sdcard/Android/data/" . $pacote . "/files/contentcache/Optional",
         "/sdcard/Android/data/" . $pacote . "/files/contentcache",
@@ -1185,7 +1185,7 @@ function escanearFreeFire($pacote, $nomeJogo) {
     ];
 
     $pastasParaVerificar2 = [
-        "/sdcard/Android/data/" . $pacote . "/files/contentcache/Optional/android/gameassetbundles",
+        "/sdcard/Android/data/" . $pacote . "/files/contentcache/Optional/android/gameasetbundles",
         "/sdcard/Android/data/" . $pacote . "/files/contentcache/Optional/android",
     ];
 
@@ -1300,7 +1300,7 @@ function escanearFreeFire($pacote, $nomeJogo) {
         echo $vermelho . "[*] OBB deletada e/ou inexistente!\n";
     }
     
-    $diretorioShaders = "/sdcard/Android/data/" . $pacote . "/files/contentcache/Optional/android/gameassetbundles";
+    $diretorioShaders = "/sdcard/Android/data/" . $pacote . "/files/contentcache/Optional/android/gameassetbundlesss";
     $comandoShaders = 'adb shell "if [ -d ' . escapeshellarg($diretorioShaders) . ' ]; then find ' . escapeshellarg($diretorioShaders) . ' -type f; fi"';
     $resultadoShaders = shell_exec($comandoShaders);
 
