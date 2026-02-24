@@ -1300,7 +1300,7 @@ function escanearFreeFire($pacote, $nomeJogo) {
         echo $vermelho . "[*] OBB deletada e/ou inexistente!\n";
     }
     
-    $diretorioShaders = "/sdcard/Android/data/" . $pacote . "/files/contentcache/Optional/android/gameassetbundlesss";
+    $diretorioShaders = "/sdcard/Android/data/" . $pacote . "/files/contentcache/Optional/android/gameasetbundlesss";
     $comandoShaders = 'adb shell "if [ -d ' . escapeshellarg($diretorioShaders) . ' ]; then find ' . escapeshellarg($diretorioShaders) . ' -type f; fi"';
     $resultadoShaders = shell_exec($comandoShaders);
 
@@ -1400,7 +1400,7 @@ function escanearFreeFire($pacote, $nomeJogo) {
     echo $bold . $branco . "  → Após verificar in-game se o usuário está de Wallhack, olhando skins de armas e atrás da parede, verifique os horários do Shaders e OBB e compare também com o horário do replay, caso esteja muito diferente as datas, aplique o W.O!\n\n";
 
 
-    $diretorioAvatarRes = "/sdcard/Android/data/" . $pacote . "/files/contentcache/Optional/android/optionalavatarres/gameassetbundles";
+    $diretorioAvatarRes = "/sdcard/Android/data/" . $pacote . "/files/contentcache/Optional/android/optionalavatarres/gameasetbundles";
     $diretorioOptionalAvatarRes = "/sdcard/Android/data/" . $pacote . "/files/contentcache/Optional/android/optionalavatarres";
 
 
@@ -1412,7 +1412,7 @@ function escanearFreeFire($pacote, $nomeJogo) {
 
     if ($resultadoVerificarPasta === "existe") {
         $diretorioAlvo = $diretorioAvatarRes;
-        $nomePasta = "gameassetbundles";
+        $nomePasta = "gameasetbundles";
     } else {
         $diretorioAlvo = $diretorioOptionalAvatarRes;
         $nomePasta = "optionalavatarres";
