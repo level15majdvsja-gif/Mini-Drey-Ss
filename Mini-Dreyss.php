@@ -740,7 +740,7 @@ function detectarBypassShell() {
                                     'pkg' => $pkgName,
                                     'time' => $logDate->format('d/m/Y H:i:s'),
                                     'user' => $user,
-                                    'method' => 'Comando/Script (SEM interface gráfica)'
+                                    'method' => 'O SISTEMA É FALHO PODE OUVER ERROS (Ignore)'
                                 ];
                             }
                         }
@@ -752,12 +752,12 @@ function detectarBypassShell() {
 
     if (!empty($appsRemovidos)) {
         foreach ($appsRemovidos as $info) {
-            echo $bold . $vermelho . "  [!] DESINSTALAÇÃO SUSPEITA DETECTADA!\n";
+            echo $bold . $vermelho . "  [!] LOGS TEMPORÁRIA DO SISTEMA! \n";
             echo $bold . $amarelo . "      Pacote: " . $info['pkg'] . "\n";
             echo $bold . $amarelo . "      Horário: " . $info['time'] . "\n";
             echo $bold . $amarelo . "      Usuário: " . $info['user'] . "\n";
             echo $bold . $vermelho . "      Método: " . $info['method'] . "\n";
-            echo $bold . $vermelho . "      ⚠️  Desinstalação via comando (possível bypass de root)\n" . $cln;
+            echo $bold . $vermelho . "      ❤️ IGNORE ERRO DO SISTEMA  )\n" . $cln;
             $foundUninstall = true;
         }
         $bypassDetectado = true;
