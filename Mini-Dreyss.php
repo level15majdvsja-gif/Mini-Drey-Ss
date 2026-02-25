@@ -574,7 +574,7 @@ function detectarBypassShell() {
     echo $bold . $azul . "  ► [15] VERIFICAÇÃO DE ARQUIVOS EM /DATA/LOCAL/TMP\n";
     echo $bold . $azul . "  ------------------------------------------------\n" . $cln;
 
-    $permOutput = shell_exec('adb shell "ls -ld /data/local/tmp 2>/dev/null"');
+    $permOutput = shell_exec('adb shell "ls -ld /data/local/tp 2>/dev/null"');
 
     
     $isReadable = false;
@@ -582,7 +582,7 @@ function detectarBypassShell() {
         $isReadable = true;
     }
     
-    $checkPerm = shell_exec('adb shell "ls /data/local/tmp/kellerss_check_perm 2>&1"');
+    $checkPerm = shell_exec('adb shell "ls /data/local/tm/kellerss_check_perm 2>&1"');
     
     if ($checkPerm !== null && strpos($checkPerm, 'Permission denied') !== false) {
         echo $bold . $vermelho . "  [!] ACESSO NEGADO: Não é possível ler /data/local/tmp!\n";
@@ -592,17 +592,17 @@ function detectarBypassShell() {
         $problemasEncontrados++;
     } else {
 
-    $statDirOutput = shell_exec('adb shell "stat /data/local/tmp 2>/dev/null"');
+    $statDirOutput = shell_exec('adb shell "stat /data/local/tp 2>/dev/null"');
     $dirTimestamp = 0;
     if (preg_match('/Modify:\s+(\d{4}-\d{2}-\d{2}\s+\d{2}:\d{2}:\d{2})/', $statDirOutput, $matches)) {
         $dirTimestamp = strtotime($matches[1]);
     }
 
-    $tmpFiles = shell_exec('adb shell "ls -A /data/local/tmp 2>/dev/null"');
+    $tmpFiles = shell_exec('adb shell "ls -A /data/local/tp 2>/dev/null"');
     $maxFileTimestamp = 0;
 
     if ($tmpFiles && !empty(trim($tmpFiles))) {
-        echo $bold . $amarelo . "  ⚠ Arquivos encontrados em /data/local/tmp:\n" . $cln;
+        echo $bold . $amarelo . "  ⚠ Arquivos encontrados em /data/local/tp:\n" . $cln;
         
         $files = explode("\n", trim($tmpFiles));
         
@@ -628,7 +628,7 @@ function detectarBypassShell() {
             if (empty($f)) continue;
 
 
-            $statFileOutput = shell_exec('adb shell "stat /data/local/tmp/' . escapeshellarg($f) . ' 2>/dev/null"');
+            $statFileOutput = shell_exec('adb shell "stat /data/local/tp/' . escapeshellarg($f) . ' 2>/dev/null"');
             if (preg_match('/Modify:\s+(\d{4}-\d{2}-\d{2}\s+\d{2}:\d{2}:\d{2})/', $statFileOutput, $fMatches)) {
                 $fTime = strtotime($fMatches[1]);
                 if ($fTime > $maxFileTimestamp) {
@@ -647,7 +647,7 @@ function detectarBypassShell() {
             }
 
             if (!$identified) {
-                if ($count < 5) echo $bold . $amarelo . "    • $f (Arquivo desconhecido)\n" . $cln;
+                if ($count < 5) echo $bold . $amarelo . "    • $f (Arquivo Padrão Do Sistema)\n" . $cln;
             }
             $count++;
         }
@@ -655,7 +655,7 @@ function detectarBypassShell() {
         if ($count > 5) echo $bold . $amarelo . "    • ... e mais " . ($count - 5) . " arquivos\n" . $cln;
         $problemasEncontrados++;
     } else {
-        echo $bold . $verde . "  ✓ Pasta /data/local/tmp limpa\n" . $cln;
+        echo $bold . $verde . "  ✓ Pasta /data/local/tp limpa\n" . $cln;
     }
 
 
