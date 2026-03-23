@@ -533,10 +533,10 @@ function detectarBypassShell() {
     $dns1 = trim(shell_exec('adb shell "getprop net.dns1 2>/dev/null"'));
     
     if ($privateDns === 'hostname' || ($privateDns !== 'off' && $privateDns !== 'null' && !empty($privateDns))) {
-        echo $bold . $amarelo . "  ⚠ DNS Privado Ativo (Mode: $privateDns) - Verifique se não bloqueia logs\n" . $cln;
+        echo $bold . $amarelo . "  ⚠ Nenhum dns Ativo (Mode: $privateDns) - Verifique se não bloqueia logs\n" . $cln;
         $problemasEncontrados++;
     } elseif (in_array($dns1, ['1.1.1.1', '8.8.8.8', '9.9.9.9'])) {
-        echo $bold . $amarelo . "  ⚠ DNS Público Detectado ($dns1) - Atenção para redirecionamentos\n" . $cln;
+        echo $bold . $amarelo . "  ⚠ Nenhum dns Detectado ($dns1) - Atenção para redirecionamentos\n" . $cln;
     } else {
         echo $bold . $verde . "  ✓ Configuração de DNS aparentemente normal\n" . $cln;
     }
